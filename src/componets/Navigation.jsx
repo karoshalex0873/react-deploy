@@ -23,7 +23,7 @@ const Navigation = () => {
     gsap.to('#mouse',{opacity:1,ease:'power4', delay:3, duration:3,y:100})
     if (window.innerWidth <= 900){
       gsap.to('#hero',{opacity:1, y:-100, ease:'power2.out', delay:1.5, duration:2})
-      gsap.to('#greetings',{opacity:1, y:100 ,ease:'power2.out',delay:2, duration:3})
+      gsap.to('#greetings',{opacity:1, y:300 ,ease:'power2.out',delay:2, duration:3})
       gsap.to('#mouse',{opacity:1,ease:'power4', delay:3, duration:3,y:-50})
     }
   })

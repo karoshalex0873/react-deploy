@@ -133,7 +133,7 @@ const ModelView = () => {
           onComplete: () => {
             gsap.to("#paragraphAnimation", {
               opacity: 1,
-              y: '50%',
+              y: '-100',
               toggleActions: "play reverse play reverse",
               duration: 3, // Set duration for the animation
               ease: "power4.out", // Use ease animation
@@ -164,7 +164,8 @@ const ModelView = () => {
         />
         <div className="lg:w-1/2 lg:ml-0 lg:mr-auto md:w-full md:ml-auto md:mr-auto text-right lg:text-left mt-5 lg:mt-0 lg:pl-10">
           <p id="paragraphAnimation" className="text-2xl md:text-2xl lg:text-3xl font-italiano opacity-0 pr-11">
-            The iPhone has become a symbol of innovation and technological advancement since its launch in 2007. Its sleek design, user-friendly interface, and powerful capabilities have revolutionized the way we communicate, work, and entertain ourselves.
+            The perfect house to buy
+            
           </p>
         </div>
       </div>
