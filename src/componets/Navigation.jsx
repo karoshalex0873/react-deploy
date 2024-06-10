@@ -33,7 +33,7 @@ const Navigation = () => {
       <h1 id="greetings" className="section-heading">WHERE ART MEET 👋 POWER </h1>
 
        <div className=" flex  w-full  common-padding flex-col">
-        <h1 id="hero"  className="hero-title  flex w-full flex-center flex-col ">
+        <h1 id="hero"  className="hero-title  flex w-full flex-center flex-col decoration-gray-300 ">
          <img  src={appleImg}
          style={{ width: '300px', height: '300px', filter: 'invert(1)' }}
          />
