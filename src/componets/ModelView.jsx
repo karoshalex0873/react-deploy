@@ -66,7 +66,7 @@ const ModelView = () => {
           toggleActions: "play reverse play reverse"
         },
         opacity: 0,
-        delay: 3
+        delay: 2
       });
 
       gsap.to("#view", {
@@ -87,7 +87,7 @@ const ModelView = () => {
           toggleActions: "play reverse play reverse"
         },
         opacity: 1,
-        delay: 3
+        delay: 2
       });
 
       if (window.innerWidth >=1000) { // Apply animations for large devices
@@ -100,14 +100,14 @@ const ModelView = () => {
           toggleActions: "play reverse play reverse",
           opacity: 1,
           x: "100%", // Move the image to the left
-          delay: 3, // Delay the animation for 3 seconds
-          duration: 6,
+          delay: 1.5, // Delay the animation for 3 seconds
+          duration: 2,
           onComplete: () => {
             gsap.to("#paragraphAnimation", {
               opacity: 1,
               toggleActions: "play reverse play reverse",
               x: "-100%", // Move the paragraph to the left (opposite direction)
-              duration: 3, // Set duration for the animation
+              duration: 1, // Set duration for the animation
               ease: "power4.out", // Use ease animation
               delay: 1,
               onComplete: () => {
@@ -128,14 +128,14 @@ const ModelView = () => {
           toggleActions: "play reverse play reverse",
           opacity: 1,
           y: "-50",
-          duration: 5,
+          duration: 2,
           delay: 3, // Delay the animation for 3 seconds
           onComplete: () => {
             gsap.to("#paragraphAnimation", {
               opacity: 1,
               y: '-100',
               toggleActions: "play reverse play reverse",
-              duration: 3, // Set duration for the animation
+              duration: 1.5, // Set duration for the animation
               ease: "power4.out", // Use ease animation
               delay: 1,
               textAlign: "left",
@@ -169,12 +169,12 @@ const ModelView = () => {
         </div>
       </div>
       <div className=" h-fit flex-col md:common-padding pt-0 " >
-        <button id="customizebtn" className="btn opacity-0 lg:text-3xl md:text-2xl flex gap-5 items-center sm:mt-60 " onClick={handleCustomizeClick}> 
+        <button id="customizebtn" className="btn opacity-0 lg:text-3xl md:text-2xl md:ml-0 md:mr-auto flex gap-5 items-center sm:mt-60 " onClick={handleCustomizeClick}> 
           <img className="bg-white rounded-full cursor-pointer" src={setImg} alt="settings" style={{ width: '28px', height: '28px', filter: 'invert(1)' }} onClick={() => scrollToSection(sectionIntoView)} />
           Customize
         </button>
         {isCustomizeOpen && (
-          <div ref={sectionIntoView} id="customize-div" className={`customize-div flex-center flex flex-col ${isCustomizeOpen ? 'open' : 'closed'} m-0 p-0`}>
+          <div ref={sectionIntoView} id="customize-div" className={`customize-div rounded-3xl ${isCustomizeOpen ? 'open' : 'closed'} m-0 p-0`}>
             {/* Contents of the customize div */}
             <Model />
           </div>
