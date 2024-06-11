@@ -3,6 +3,7 @@ import Navigation from "./componets/Navigation";
 import ModelView from "./componets/ModelView";
 import Part from "./componets/Part";
 import Reach from "./componets/Reach";
+import Documentation from "./componets/Documentation";
 
 
 
@@ -16,6 +17,7 @@ const App = () => {
       <Part />
       <Navigation/>
       <ModelView/>
+      <Documentation />
      
     </main>
   )

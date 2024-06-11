@@ -2,7 +2,7 @@ import { useState } from "react";
 import {  darkImg,  lightImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import Documentation from "./Documentation";
+// import Documentation from "./Documentation";
 // import { light } from "@fortawesome/fontawesome-svg-core/import.macro";
 // import Part from "./Part";
 
@@ -45,12 +45,11 @@ const Model = () => {
               : <img src={darkImg}
               style={{ width: '24px', height: '24px', filter: 'invert(1)' }}/>}
           </button>
-          
           <button onClick={handleButtonClick} className="mt-4 px-6 py-2  text-right bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
-           <Documentation />
+           <h1>hello</h1>
           )}
         </div>
       </div>
