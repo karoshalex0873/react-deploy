@@ -1,7 +1,8 @@
 import { useState } from "react";
-import {  darkImg, houseImg, lightImg } from "../utils";
+import {  darkImg,  lightImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import Documentation from "./Documentation";
 // import { light } from "@fortawesome/fontawesome-svg-core/import.macro";
 // import Part from "./Part";
 
@@ -44,24 +45,12 @@ const Model = () => {
               : <img src={darkImg}
               style={{ width: '24px', height: '24px', filter: 'invert(1)' }}/>}
           </button>
-          <img
-            id="imgAnimation"
-            className="w-fit rounded-3xl opacity-0"
-            src={houseImg}
-            alt="apple"
-            style={{ transform: 'translateX(0)', }}
-          />
           
           <button onClick={handleButtonClick} className="mt-4 px-6 py-2  text-right bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
-            <div className="mt-4 p-4 bg-gray-200 rounded-lg text-black w-full flex-centergit ">
-              <h2 className="text-lg font-semibold">Fetures</h2>
-              <p>land size: 1/2 arce</p>
-              <p>A four Bedroom  </p>
-              <p>parking slot</p>
-            </div>
+           <Documentation />
           )}
         </div>
       </div>
