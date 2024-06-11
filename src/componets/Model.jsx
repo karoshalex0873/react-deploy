@@ -56,7 +56,7 @@ const Model = () => {
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
-            <div className="mt-4 p-4 bg-gray-200 rounded-lg text-black">
+            <div className="mt-4 p-4 bg-gray-200 rounded-lg text-black w-full flex-centergit ">
               <h2 className="text-lg font-semibold">Fetures</h2>
               <p>land size: 1/2 arce</p>
               <p>A four Bedroom  </p>
