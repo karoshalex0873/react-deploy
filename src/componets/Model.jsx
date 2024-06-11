@@ -2,7 +2,7 @@ import { useState } from "react";
 import {  darkImg,  lightImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-// import Documentation from "./Documentation";
+import Document from "./Document";
 // import { light } from "@fortawesome/fontawesome-svg-core/import.macro";
 // import Part from "./Part";
 
@@ -49,7 +49,7 @@ const Model = () => {
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
-           <h1>hello</h1>
+           <Document />
           )}
         </div>
       </div>

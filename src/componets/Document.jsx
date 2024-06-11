@@ -16,7 +16,7 @@ const inventions = [
   // Add more inventions here
 ];
 
-const Documentation = () => {
+const Document = () => {
   return (
     <div className="documentation screen-max-width">
       <h1 className="hero-title">Nikola Tesla: The Master of Invention</h1>
@@ -44,4 +44,4 @@ const Documentation = () => {
   );
 };
 
-export default Documentation;
+export default Document;
