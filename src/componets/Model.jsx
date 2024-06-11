@@ -57,8 +57,10 @@ const Model = () => {
           </button>
           {showDocumentation && (
             <div className="mt-4 p-4 bg-gray-200 rounded-lg text-black">
-              <h2 className="text-lg font-semibold">Image Documentation</h2>
-              <p>This is an image of an apple. It is used to demonstrate the capabilities of the GSAP and Framer Motion libraries in creating animations. The background features animated green dots moving randomly, providing a dynamic and visually appealing effect.</p>
+              <h2 className="text-lg font-semibold">Fetures</h2>
+              <p>land size: 1/2 arce</p>
+              <p>A four Bedroom  </p>
+              <p>parking slot</p>
             </div>
           )}
         </div>
