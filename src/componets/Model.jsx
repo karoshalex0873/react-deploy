@@ -36,8 +36,8 @@ const Model = () => {
     <h1 className="text-center font-semibold lg:text-8xl md:text-7xl text-5xl text-white  max-md:mb-10">This is the full image and its Documentation</h1>
       <div className={` flex w-full rounded-3xl items-center justify-center min-h-screen p-4 overflow-hidden ${theme === "dark" ?  "bg-transparent text-white" : "bg-white text-black"}`}>
       
-        <div className="relative flex-col flex-center items-center justify-center  rounded-3xl p-4 w-full md:w-full lg:w-full ">
-          <button onClick={toggleTheme} className="px-5 py-2 rounded-3xl bg-blue-950 my-5 h border border-transparent hover:border hover:text-white hover:border-blue-950 transition-transform  md:mx-auto lg:ml-auto lg:mr-0  md:mr-5 sm:ml-auto sm:mr-0 sm:mx-auto">
+        <div className="relative flex-col lg:flex-center items-center justify-center  rounded-3xl p-4 w-full md:w-full lg:w-full ">
+          <button onClick={toggleTheme} className="px-5 py-2 rounded-3xl bg-blue-950 my-5 h border border-transparent hover:border hover:text-white hover:border-blue-950 transition-transform  md:mx-auto lg:ml-auto lg:mr-0  md:mr-5 sm:text-left sm:mr-0 sm:mx-auto">
                
               {theme === "dark" ? <img src={lightImg}
               style={{ width: '36px', height: '36px', filter: 'invert(1)' }} /> 
@@ -52,7 +52,7 @@ const Model = () => {
             style={{ transform: 'translateX(0)', }}
           />
           
-          <button onClick={handleButtonClick} className="mt-4 px-6 py-2 w-full text-right bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
+          <button onClick={handleButtonClick} className="mt-4 px-6 py-2  text-right bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
