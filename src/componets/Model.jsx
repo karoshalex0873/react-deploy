@@ -3,9 +3,6 @@ import {  darkImg,  lightImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Document from "./Document";
-// import { light } from "@fortawesome/fontawesome-svg-core/import.macro";
-// import Part from "./Part";
-
 const Model = () => {
   useGSAP(()=>{
     gsap.to('#imgAnimation',
