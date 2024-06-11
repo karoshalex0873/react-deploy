@@ -52,8 +52,8 @@ const Model = () => {
             style={{ transform: 'translateX(0)', }}
           />
           
-          <button onClick={handleButtonClick} className="mt-4 px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
-            {showDocumentation ? "Hide Documentation" : "Check Documentation"}
+          <button onClick={handleButtonClick} className="mt-4 px-6 py-2 w-full text-right bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration-300">
+            {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
             <div className="mt-4 p-4 bg-gray-200 rounded-lg text-black">
