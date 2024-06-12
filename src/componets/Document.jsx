@@ -1,7 +1,6 @@
 // import React from 'react';
 import { motion } from 'framer-motion';
 import { Scrollama, Step } from 'react-scrollama';
-// import houseImg from '../utils/houseImg.jpg'; // Adjust the path as needed
 import houseImg from '../../public/assets/images/house.jpg'; // Adjust the path as needed
 
 const inventions = [
