@@ -18,25 +18,19 @@ const inventions = [
   // Add more inventions here
 ];
 
-const generateImageFragments = (imageSrc, numFragments = 9) => {
-  const fragments = [];
-  const rows = Math.sqrt(numFragments);
-  const cols = rows;
+const generateRandomShapes = (numFragments = 9) => {
+  const shapes = [];
 
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
-      fragments.push({
-        src: imageSrc,
-        style: {
-          clipPath: `polygon(${(col / cols) * 100}% ${(row / rows) * 100}%, ${(col / cols) * 100}% ${((row + 1) / rows) * 100}%, ${((col + 1) / cols) * 100}% ${((row + 1) / rows) * 100}%, ${((col + 1) / cols) * 100}% ${(row / rows) * 100}%)`,
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-        },
-      });
-    }
+  for (let i = 0; i < numFragments; i++) {
+    shapes.push({
+      clipPath: `polygon(${Math.random() * 100}% ${Math.random() * 100}%, ${Math.random() * 100}% ${Math.random() * 100}%, ${Math.random() * 100}% ${Math.random() * 100}%)`,
+      opacity: 0,
+      x: `${Math.random() * 100}%`,
+      y: `${Math.random() * 100}%`,
+    });
   }
 
-  return fragments;
+  return shapes;
 };
 
 const Document = () => {
@@ -63,35 +57,34 @@ const Document = () => {
         {inventions.map((invention, index) => (
           <Step data={index} key={index}>
             <motion.div 
-              className="bg-gray-800 rounded-lg p-6 mb-6 flex flex-col items-center"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-gray-800 rounded-lg p-6 mb-6 overflow-hidden relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
               <motion.h2 
                 className="text-2xl font-semibold text-teal-400 mb-2"
                 initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
               >
                 {invention.title}
               </motion.h2>
               <p className="text-lg text-gray-300 mb-4">{invention.description}</p>
-              <div className="relative w-full h-64">
-                {generateImageFragments(invention.image).map((fragment, i) => (
+              <div className="absolute top-0 left-0 w-full h-full flex flex-wrap">
+                {generateRandomShapes(25).map((shape, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-full h-full"
-                    style={fragment.style}
-                    initial={{ left: fragment.style.left, top: fragment.style.top }}
-                    whileInView={{ left: '0%', top: '0%' }}
-                    transition={{ duration: 1, delay: i * 0.05 }}
+                    className="w-1/5 h-1/5"
+                    style={{ clipPath: shape.clipPath, opacity: shape.opacity, x: shape.x, y: shape.y }}
+                    initial={{ opacity: 0, x: '50%', y: '50%' }}
+                    animate={{ opacity: 1, x: 0, y: 0 }}
+                    transition={{ duration: 1, delay: i * 0.02 }}
                   >
                     <img
-                      src={fragment.src}
+                      src={invention.image}
                       alt={invention.title}
                       className="w-full h-full object-cover"
-                      style={{ clipPath: fragment.style.clipPath }}
                     />
                   </motion.div>
                 ))}
