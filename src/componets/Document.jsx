@@ -18,6 +18,27 @@ const inventions = [
   // Add more inventions here
 ];
 
+const generateImageFragments = (imageSrc, numFragments = 9) => {
+  const fragments = [];
+  const rows = Math.sqrt(numFragments);
+  const cols = rows;
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      fragments.push({
+        src: imageSrc,
+        style: {
+          clipPath: `polygon(${(col / cols) * 100}% ${(row / rows) * 100}%, ${(col / cols) * 100}% ${((row + 1) / rows) * 100}%, ${((col + 1) / cols) * 100}% ${((row + 1) / rows) * 100}%, ${((col + 1) / cols) * 100}% ${(row / rows) * 100}%)`,
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+        },
+      });
+    }
+  }
+
+  return fragments;
+};
+
 const Document = () => {
   return (
     <div className="max-w-7xl mx-auto p-4">
@@ -56,33 +77,24 @@ const Document = () => {
                 {invention.title}
               </motion.h2>
               <p className="text-lg text-gray-300 mb-4">{invention.description}</p>
-              <div className="flex space-x-2 justify-center">
-                <motion.div
-                  className="w-1/2"
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img
-                    src={invention.image}
-                    alt={invention.title}
-                    className="w-full h-auto rounded-lg"
-                    style={{ clipPath: 'inset(0 50% 0 0)' }}
-                  />
-                </motion.div>
-                <motion.div
-                  className="w-1/2"
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img
-                    src={invention.image}
-                    alt={invention.title}
-                    className="w-full h-auto rounded-lg"
-                    style={{ clipPath: 'inset(0 0 0 50%)' }}
-                  />
-                </motion.div>
+              <div className="relative w-full h-64">
+                {generateImageFragments(invention.image).map((fragment, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-full h-full"
+                    style={fragment.style}
+                    initial={{ left: fragment.style.left, top: fragment.style.top }}
+                    whileInView={{ left: '0%', top: '0%' }}
+                    transition={{ duration: 1, delay: i * 0.05 }}
+                  >
+                    <img
+                      src={fragment.src}
+                      alt={invention.title}
+                      className="w-full h-full object-cover"
+                      style={{ clipPath: fragment.style.clipPath }}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </Step>
