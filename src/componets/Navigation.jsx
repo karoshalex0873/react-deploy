@@ -44,7 +44,7 @@ const Navigation = () => {
             src={mouseImg} alt="scroll"
             style={{ width: '70px', height: '70px', filter: 'invert(1)' }}
             />
-            <h2 id="mouse" className=" text-white lg:text-3xl md:text-2xl text-1xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20">scroll down</h2>
+            <h2 id="mouse" className=" text-white lg:text-3xl md:text-2xl text-1xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20">scroll hytr down</h2>
         </div>
     </div>
     </>
