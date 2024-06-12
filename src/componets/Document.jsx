@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Scrollama, Step } from 'react-scrollama';
 import houseImg from '../../public/assets/images/house.jpg'; // Adjust the path as needed
+// import houseImg from '../utils/houseImg.jpg'; // Adjust the path as needed
 
 const inventions = [
   {
@@ -41,21 +42,38 @@ const Document = () => {
         {inventions.map((invention, index) => (
           <Step data={index} key={index}>
             <motion.div 
-              className="bg-gray-800 rounded-lg p-6 mb-6 transform transition-transform hover:scale-105"
+              className="bg-gray-800 rounded-lg p-6 mb-6 flex flex-col items-center"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-2xl font-semibold text-teal-400 mb-2">{invention.title}</h2>
-              <p className="text-lg text-gray-300 mb-4">{invention.description}</p>
-              <motion.img
-                src={invention.image}
-                alt={invention.title}
-                className="w-full rounded-lg"
-                initial={{ opacity: 0, y: 50 }}
+              <motion.h2 
+                className="text-2xl font-semibold text-teal-400 mb-2"
+                initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-              />
+              >
+                {invention.title}
+              </motion.h2>
+              <p className="text-lg text-gray-300 mb-4">{invention.description}</p>
+              <div className="flex space-x-2">
+                <motion.img
+                  src={invention.image}
+                  alt={invention.title}
+                  className="w-1/2 rounded-lg"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <motion.img
+                  src={invention.image}
+                  alt={invention.title}
+                  className="w-1/2 rounded-lg"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
             </motion.div>
           </Step>
         ))}
