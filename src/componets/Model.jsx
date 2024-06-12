@@ -2,7 +2,7 @@ import { useState } from "react";
 import {  darkImg,  lightImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-// import Document from "./Document";
+import Document from "./Document";
 const Model = () => {
   useGSAP(()=>{
     gsap.to('#imgAnimation',
@@ -46,7 +46,7 @@ const Model = () => {
             {showDocumentation ? "Features" : "Exit features"}
           </button>
           {showDocumentation && (
-            <h1>Hello</h1>
+           <Document />
           )}
         </div>
       </div>
